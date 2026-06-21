@@ -1,4 +1,3 @@
-
 name: Tourism Project Pipeline
 
 on:
@@ -36,12 +35,12 @@ jobs:
     needs: data-prep
     runs-on: ubuntu-latest
     steps:
-      - uses: actions:checkout@v3
+      - uses: actions/checkout@v3  # Corrected line
       - name: Install Dependencies
         run: pip install -r TourismPredictor/requirements.txt mlflow xgboost
       - name: Start MLflow Server
         run: |
-          nohup mlflow ui --host 0.0.0.0 --port 5000 &  # Run MLflow UI in the background
+          nohub mlflow ui --host 0.0.0.0 --port 5000 &  # Run MLflow UI in the background
           sleep 5  # Wait for a moment to let the server starts
       - name: Model Building
         env:
