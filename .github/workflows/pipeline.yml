@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3  # Corrected line
       - name: Install Dependencies
-        run: pip install -r TourismPredictor/requirements.txt mlflow xgboost
+        run: pip install -r TourismPredictor/requirements.txt
       - name: Start MLflow Server
         run: |
           nohub mlflow ui --host 0.0.0.0 --port 5000 &  # Run MLflow UI in the background
