@@ -4,10 +4,6 @@ import os
 
 from google.colab import userdata
 
-# Get the HF_TOKEN from Colab secrets and set it as an environment variable
-hf_token = userdata.get('HF_TOKEN')
-os.environ["HF_TOKEN"] = hf_token
-
 # Initialize HfApi with the token
 api = HfApi(token=os.getenv("HF_TOKEN"))
 
